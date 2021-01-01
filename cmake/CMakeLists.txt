@@ -16,8 +16,16 @@ if(POLICY CMP0048)
   cmake_policy(SET CMP0048 NEW)
 endif()
 
+# set CMAKE variables
+list(APPEND CMAKE_PREFIX_PATH "$ENV{CONDA_PREFIX}/share/catkin/cmake")
+
 # Project
 project(protobuf C CXX)
+
+# Find Catkin
+find_package(catkin REQUIRED)
+# Declare this project as a catkin package
+catkin_package()
 
 # Add c++11 flags
 if (CYGWIN)
@@ -40,7 +48,7 @@ endif()
 if(WITH_PROTOC)
   set(protobuf_PROTOC_EXE ${WITH_PROTOC} CACHE FILEPATH "Protocol Buffer Compiler executable" FORCE)
 endif()
-option(protobuf_BUILD_TESTS "Build tests" ON)
+option(protobuf_BUILD_TESTS "Build tests" OFF)
 option(protobuf_BUILD_CONFORMANCE "Build conformance tests" OFF)
 option(protobuf_BUILD_EXAMPLES "Build examples" OFF)
 option(protobuf_BUILD_PROTOC_BINARIES "Build libprotoc and protoc compiler" ON)

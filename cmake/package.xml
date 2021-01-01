@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+  <!-- Package Metadata -->
+  <name>protobuf</name>
+  <version>3.14.0</version>
+  <description>
+    Protocol Buffers (a.k.a., protobuf) are Google's language-neutral, platform-neutral, extensible mechanism for serializing structured data.
+    This fork adds support for building protobuf using the catkin build system.
+  </description>
+
+  <maintainer email="elvis.dowson@gmail.com">Elvis Dowson</maintainer>
+  <license>Google modified BSD 3-clause license</license>
+  <url type="repository">https://github.com/protocolbuffers/protobuf</url>
+
+  <!-- Required by Catkin -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+</package>
